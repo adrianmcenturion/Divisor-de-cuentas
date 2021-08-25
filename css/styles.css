@@ -1,0 +1,43 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-divisor {
+    background-color: aqua;
+    margin: 0 auto;
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-inputs {
+    margin-top: 3rem;
+    width: 80%;
+
+}
+
+.boton {
+    padding: 5px;
+    
+}
+
+.h4resultado {
+    font-size: 2em;
+    color: red;
+}
