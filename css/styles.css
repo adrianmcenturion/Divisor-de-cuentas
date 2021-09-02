@@ -71,3 +71,10 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.resultados {
+    width: 100%;
+    margin-top: 4rem;
+
+    
+}

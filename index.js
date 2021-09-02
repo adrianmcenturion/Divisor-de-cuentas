@@ -6,6 +6,8 @@ const containerPersonas = document.getElementById("containerPersonas")
 const inputMonto = document.getElementsByClassName("inputMonto")
 const botonCalcular = document.getElementById("botonCalcular")
 
+const resultados = document.getElementById("resultados")
+
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
 
@@ -83,7 +85,7 @@ function divisionCuentas () {
         
     }
     
-    console.log(cantidadPersonas)
+    console.log(cantidadPersonas.monto)
 
 
     const arrayMontos = cantidadPersonas.map(function(cantidadPersonas) {return cantidadPersonas.monto})
@@ -91,15 +93,21 @@ function divisionCuentas () {
 
     console.log(arrayMontosNum)
 
-    total = 0
+    totalMontos = 0
 
     for (let i = 0; i < arrayMontosNum.length; i++) {
-             total += arrayMontosNum[i]
+             totalMontos += arrayMontosNum[i]
 
         }
 
-        console.log(total)
+        console.log(totalMontos)
 
+
+        const total = document.createElement('h4');
+                total.innerText = "El gasto es " + totalMontos
+                total.className = "total";
+
+                resultados.appendChild(total)
 
     
         const cadaUnoPone = 0
@@ -107,36 +115,58 @@ function divisionCuentas () {
     division()
 
     
+    function division (){
+    
+        let diferencia = []
+    
+        const cadaUnoPone = totalMontos / cantidadPersonas.length
+    
+        console.log(cadaUnoPone)
+    
+        console.log(arrayMontosNum)
+    
+        for (let index = 0; index < cantidadPersonas.length; index++) {
+            diferencia.push (cadaUnoPone - arrayMontosNum[index])
 
+            if (diferencia[index] < 0 ) {
 
-}
+                const tieneQueRecibir = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index] * -1
 
     
 
+                const tagTieneQueRecibir = document.createElement('h4');
+                tagTieneQueRecibir.innerText = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index] * -1;
+                tagTieneQueRecibir.className = "tieneQueRecibir";
+
+                resultados.appendChild(tagTieneQueRecibir)
 
 
 
 
-function division (){
+            } else {
 
-    const diferencia = 0
+                const tieneQuePoner = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
 
-    let cadaUnoPone = total / cantidadPersonas.length
+                const tagTieneQuePoner = document.createElement('h4');
+                tagTieneQuePoner.innerText = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
+                tagTieneQuePoner.className = "tieneQuePoner";
 
-    console.log(cadaUnoPone)
+                resultados.appendChild(tagTieneQuePoner)
 
-    console.log(cantidadPersonas[1].monto)
-
-    if (cantidadPersonas.monto > 0) {
-
-        const diferencia = cadaUnoPone - cantidadPersonas.monto
-
+            }
+            
         
-
-
+        }
+    
+        
+        
     }
 
-    console.log(diferencia)
+
+}
 
     
-}
+
+
+
+
