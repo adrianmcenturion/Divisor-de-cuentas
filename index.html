@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divisor de Cuentas</title>
+    <title>Divisor de Gastos</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
     <div class="card-divisor">
-        <h1>Divisor de cuentas</h1>
-        <form action="" class="contenedor-inputs">
+        <h1>Divisor de gastos</h1>
+        <form id="form" action="" class="contenedor-inputs">
             <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
-            <label for="participantes">Cantidad de personas </label><input id="participantes" type="number" min="1" max="10">
+            <label for="participantes">Cantidad de personas </label><input id="participantes" type="number" min="1" max="10" value="1">
+            <div class="container-botones">
             <button type="button" id="boton_siguiente" class="boton_siguiente">Siguiente</button>
+            <button type="reset" id="boton_reset" class="boton_reset">Reset</button>
 
-        <div id="containerPersonas" class="containerPersonas"></div>
+            </div>
+
+            <p>Ingrese el monto que aporto cada persona</p>
+
+        <div id="containerPersonas" class="containerPersonas">
+            
+        </div>
         <div id="calculoGastos" class="calculoGastos">
             <button id="botonCalcular" class="botonCalcular" type="button">Calcular</button>
         </div>

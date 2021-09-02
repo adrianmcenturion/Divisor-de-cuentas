@@ -1,6 +1,7 @@
 const participantes = document.getElementById("participantes")
 const monto = document.getElementById("monto")
 const boton_siguiente = document.getElementById("boton_siguiente")
+const boton_reset = document.getElementById("boton_reset")
 const containerPersonas = document.getElementById("containerPersonas")
 
 const inputMonto = document.getElementsByClassName("inputMonto")
@@ -10,6 +11,7 @@ const resultados = document.getElementById("resultados")
 
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
+boton_reset.addEventListener('click', resetearTodo )
 
 
 
@@ -47,6 +49,11 @@ function cantidadParticipantes (e) {
 
     personas = participantes.value
 
+    if (participantes.value < 0 || participantes.value > 10) {
+
+        alert("Por favor ingrese un número entre 1 y 10")
+    }else {
+
     for (let index = 1; index <= personas; index++) {
         cantidadPersonas.push({
             
@@ -62,7 +69,9 @@ function cantidadParticipantes (e) {
         inputMonto.type = "number"
         inputMonto.className = "inputMonto";
         inputMonto.min = 0
-        inputMonto.value = 0
+        inputMonto.placeholder = "Monto pagado"
+        
+        
         
 
         containerPersonas.appendChild(inputMonto)
@@ -71,6 +80,10 @@ function cantidadParticipantes (e) {
 
    console.log(cantidadPersonas)
 
+   boton_siguiente.disabled = true
+
+   
+}
 
 }
 
@@ -85,7 +98,7 @@ function divisionCuentas () {
         
     }
     
-    console.log(cantidadPersonas.monto)
+    
 
 
     const arrayMontos = cantidadPersonas.map(function(cantidadPersonas) {return cantidadPersonas.monto})
@@ -104,7 +117,7 @@ function divisionCuentas () {
 
 
         const total = document.createElement('h4');
-                total.innerText = "El gasto es " + totalMontos
+                total.innerText = "El gasto fue de $" + totalMontos
                 total.className = "total";
 
                 resultados.appendChild(total)
@@ -130,12 +143,12 @@ function divisionCuentas () {
 
             if (diferencia[index] < 0 ) {
 
-                const tieneQueRecibir = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index] * -1
+                // const tieneQueRecibir = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index].toFixed(2) * -1
 
     
 
                 const tagTieneQueRecibir = document.createElement('h4');
-                tagTieneQueRecibir.innerText = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index] * -1;
+                tagTieneQueRecibir.innerText = cantidadPersonas[index].name + " tiene que recibir $" + diferencia[index].toFixed(2) * -1;
                 tagTieneQueRecibir.className = "tieneQueRecibir";
 
                 resultados.appendChild(tagTieneQueRecibir)
@@ -145,10 +158,10 @@ function divisionCuentas () {
 
             } else {
 
-                const tieneQuePoner = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
+                // const tieneQuePoner = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
 
                 const tagTieneQuePoner = document.createElement('h4');
-                tagTieneQuePoner.innerText = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
+                tagTieneQuePoner.innerText = cantidadPersonas[index].name + " tiene que abonar $" + diferencia[index].toFixed(2)
                 tagTieneQuePoner.className = "tieneQuePoner";
 
                 resultados.appendChild(tagTieneQuePoner)
@@ -162,11 +175,17 @@ function divisionCuentas () {
         
     }
 
+    
+
 
 }
 
     
 
+function resetearTodo (){
 
+    window.location.reload();
+
+}
 
 
