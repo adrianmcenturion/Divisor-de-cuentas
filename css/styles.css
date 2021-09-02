@@ -47,8 +47,15 @@ body {
     display: flex;
     
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 0% auto;
+}
+
+.containerPersonaGasto {
+    width: 23%;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 

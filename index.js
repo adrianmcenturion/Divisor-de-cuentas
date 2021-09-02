@@ -14,33 +14,6 @@ botonCalcular.addEventListener('click', divisionCuentas)
 boton_reset.addEventListener('click', resetearTodo )
 
 
-
-// function division(e) {
-//     e.preventDefault();
-
-//     if (monto.value == "" || participantes.value == "") {
-//         window.alert("Ingrese el monto y/o las personas por las que dividir")
-//     }
-//     else {
-
-//     const resultado = monto.value / participantes.value
-    
-    
-
-
-//     const tagh4 = document.createElement('h4');
-//     tagh4.innerText = "Cada uno tiene que pagar $" + resultado.toFixed(2);
-//     tagh4.className = "h4resultado";
-
-//     resultadofinal.appendChild(tagh4);
-
-//     monto.value = ""
-//     participantes.value = ""
-//     }
-
-// }
-
-
 const cantidadPersonas = []
 
 
@@ -63,7 +36,7 @@ function cantidadParticipantes (e) {
         tagh4.innerText = "Persona " + index;
         tagh4.className = "participantesH4";
 
-        containerPersonas.appendChild(tagh4)
+        // containerPersonas.appendChild(tagh4)
 
         const inputMonto = document.createElement('input');
         inputMonto.type = "number"
@@ -71,10 +44,16 @@ function cantidadParticipantes (e) {
         inputMonto.min = 0
         inputMonto.placeholder = "Monto pagado"
         
+        // containerPersonas.appendChild(inputMonto)
         
-        
+        const containerPersonaGasto = document.createElement('div')
+        containerPersonaGasto.className = "containerPersonaGasto"
 
-        containerPersonas.appendChild(inputMonto)
+        containerPersonaGasto.appendChild(tagh4)
+        containerPersonaGasto.appendChild(inputMonto)
+
+        containerPersonas.appendChild(containerPersonaGasto)
+        
         
     }
 
@@ -176,7 +155,7 @@ function divisionCuentas () {
     }
 
     
-
+    botonCalcular.disabled = true
 
 }
 
