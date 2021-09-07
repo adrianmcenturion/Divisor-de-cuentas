@@ -8,6 +8,8 @@ const inputMonto = document.getElementsByClassName("inputMonto")
 const botonCalcular = document.getElementById("botonCalcular")
 
 const resultados = document.getElementById("resultados")
+const containerTieneQueRecibir = document.getElementById("container-tiene-que-recibir")
+const containerTieneQuePoner = document.getElementById("container-tiene-que-poner")
 
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
@@ -22,7 +24,7 @@ function cantidadParticipantes (e) {
 
     personas = participantes.value
 
-    if (participantes.value < 0 || participantes.value > 10) {
+    if (personas < 0 || personas > 10) {
 
         alert("Por favor ingrese un número entre 1 y 10")
     }else {
@@ -130,7 +132,7 @@ function divisionCuentas () {
                 tagTieneQueRecibir.innerText = cantidadPersonas[index].name + " tiene que recibir $" + diferencia[index].toFixed(2) * -1;
                 tagTieneQueRecibir.className = "tieneQueRecibir";
 
-                resultados.appendChild(tagTieneQueRecibir)
+                containerTieneQueRecibir.appendChild(tagTieneQueRecibir)
 
 
 
@@ -143,7 +145,7 @@ function divisionCuentas () {
                 tagTieneQuePoner.innerText = cantidadPersonas[index].name + " tiene que abonar $" + diferencia[index].toFixed(2)
                 tagTieneQuePoner.className = "tieneQuePoner";
 
-                resultados.appendChild(tagTieneQuePoner)
+                containerTieneQuePoner.appendChild(tagTieneQuePoner)
 
             }
             

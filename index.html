@@ -9,29 +9,35 @@
 </head>
 <body>
 
-    <div class="card-divisor">
-        <h1>Divisor de gastos</h1>
-        <form id="form" action="" class="contenedor-inputs">
-            <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
-            <label for="participantes">Cantidad de personas </label><input id="participantes" type="number" min="1" max="10" value="1">
-            <div class="container-botones">
-            <button type="button" id="boton_siguiente" class="boton_siguiente">Siguiente</button>
-            <button type="reset" id="boton_reset" class="boton_reset">Reset</button>
+    <div class="container-grande">
+        <div class="card-divisor container-estilo">
+            <h1>Divisor de gastos</h1>
+            <form id="form" action="" class="contenedor-inputs">
+                <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
+                <label for="participantes">Cantidad de personas </label><input id="participantes" type="number" min="1" max="10" value="1">
+                <div class="container-botones">
+                <button type="button" id="boton_siguiente" class="boton_siguiente">Siguiente</button>
+                
 
+                </div>
+
+                <p>Ingrese el monto que aporto cada persona</p>
+
+            <div id="containerPersonas" class="containerPersonas">
+                
             </div>
-
-            <p>Ingrese el monto que aporto cada persona</p>
-
-        <div id="containerPersonas" class="containerPersonas">
+            <div id="calculoGastos" class="calculoGastos">
+                <button id="botonCalcular" class="botonCalcular" type="button">Calcular</button>
+            </div>
             
         </div>
-        <div id="calculoGastos" class="calculoGastos">
-            <button id="botonCalcular" class="botonCalcular" type="button">Calcular</button>
-        </div>
-        <div id="resultados" class="resultados">
-            
+            <div class="container-resultados">
+                <div id="resultados" class="resultados container-estilo"></div>
+                <div id="container-tiene-que-recibir" class="container-tiene-que-recibir container-estilo"></div>
+                <div id="container-tiene-que-poner" class="container-tiene-que-poner container-estilo"></div>
+                <button type="reset" id="boton_reset" class="boton_reset">Reset</button>
+            </div>
     </div>
-    
 
 
     <script src="./index.js"></script>

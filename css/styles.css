@@ -2,28 +2,59 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --color-background: #A6A9BC;
+    --color-primario: #5C677D;
+    --color-secundario: #001233;
+
+}
+
 * {
     margin: 0%;
     padding: 0%;
+    
 }
 
 body {
+    background-color: var(--color-background);
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5em;
 }
 
+.container-grande {
+    width: 1200px;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .card-divisor {
-    background-color: aqua;
-    margin: 0 auto;
-    width: 60vw;
-    height: 50vh;
+    background-color: var(--color-background);
+    width: 45%;
+    height: 100%;
+    max-width: 50vw ;
+    min-width: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container-estilo {
+    border-radius: 15px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+    
+}
+
+.card-divisor h1 {
+    margin-top: 3rem;
+    font-size: 3em;
 }
 
 .contenedor-inputs {
@@ -45,14 +76,14 @@ body {
 .containerPersonas {
     width: 100%;
     display: flex;
-    
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     margin: 0% auto;
 }
 
 .containerPersonaGasto {
-    width: 23%;
+    /* width: 17%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +95,8 @@ body {
 }
 
 .inputMonto {
-    margin: 1em
+    margin: 0.5em;
+    width: 100px;
 }
 
 .h4resultado {
@@ -80,9 +112,33 @@ body {
     justify-content: center;
 }
 
+.container-resultados {
+    width: 45%;
+    height: 100%;
+    min-width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .resultados {
-    width: 100%;
-    margin-top: 4rem;
+    background-color: red;
+    
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     
+}
+
+.container-tiene-que-recibir {
+    background-color: green;
+    
+    height: 35%;
+}
+.container-tiene-que-poner {
+    background-color: blue;
+    
+    height: 35%;
 }
