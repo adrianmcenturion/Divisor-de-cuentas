@@ -79,7 +79,13 @@ function cantidadParticipantes (e) {
 function divisionCuentas () {
 
     for (let index = 0; index < cantidadPersonas.length; index++) {
+
+        if(tagh4[index].value == "") {
+            cantidadPersonas[index.name = "Persona " + index]
+        }else {
+
         cantidadPersonas[index].name = tagh4[index].value
+        }
         
     }
 
