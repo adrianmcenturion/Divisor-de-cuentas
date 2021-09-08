@@ -11,31 +11,31 @@
 
     <div class="container-grande">
         <div class="card-divisor container-estilo">
-            <h1>Divisor de gastos</h1>
+            <h1 class="h1">Divisor de gastos</h1>
             <form id="form" action="" class="contenedor-inputs">
                 <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
-                <label for="participantes">Cantidad de personas </label><input id="participantes" type="number" min="1" max="10" value="1">
+                <div class="mini_container"><label for="participantes" class="label_participantes fonts-secundarias">Cantidad de personas </label><input id="participantes" class="input_participantes" type="number" min="1" max="10" value="1"></div>
                 <div class="container-botones">
-                <button type="button" id="boton_siguiente" class="boton_siguiente">Siguiente</button>
+                <button type="button" id="boton_siguiente" class="boton_siguiente botones_general">Siguiente</button>
                 
 
                 </div>
 
-                <p>Ingrese el monto que aporto cada persona</p>
+                <p class="p2 fonts-secundarias">Ingrese el monto que aportó cada persona</p>
 
             <div id="containerPersonas" class="containerPersonas">
                 
             </div>
             <div id="calculoGastos" class="calculoGastos">
-                <button id="botonCalcular" class="botonCalcular" type="button">Calcular</button>
+                <button id="botonCalcular" class="botonCalcular botones_general" type="button">Calcular</button>
             </div>
             
         </div>
             <div class="container-resultados">
-                <div id="resultados" class="resultados container-estilo"></div>
-                <div id="container-tiene-que-recibir" class="container-tiene-que-recibir container-estilo"></div>
-                <div id="container-tiene-que-poner" class="container-tiene-que-poner container-estilo"></div>
-                <button type="reset" id="boton_reset" class="boton_reset">Reset</button>
+                <div id="resultados" class="resultados container-estilo flex_column_center"></div>
+                <div id="container-tiene-que-recibir" class="container-tiene-que-recibir container-estilo flex_column_center"></div>
+                <div id="container-tiene-que-poner" class="container-tiene-que-poner container-estilo flex_column_center"></div>
+                <button type="reset" id="boton_reset" class="boton_reset botones_general">Reiniciar</button>
             </div>
     </div>
 

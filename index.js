@@ -3,7 +3,7 @@ const monto = document.getElementById("monto")
 const boton_siguiente = document.getElementById("boton_siguiente")
 const boton_reset = document.getElementById("boton_reset")
 const containerPersonas = document.getElementById("containerPersonas")
-const tagh4 = document.getElementsByClassName("participantesH4")
+const inputNombres = document.getElementsByClassName("inputNombres")
 const inputMonto = document.getElementsByClassName("inputMonto")
 const botonCalcular = document.getElementById("botonCalcular")
 
@@ -34,9 +34,9 @@ function cantidadParticipantes (e) {
             
             name: "Persona " + index});
 
-        const tagh4 = document.createElement('input');
-        tagh4.placeholder = "Persona " + index;
-        tagh4.className = "participantesH4";
+        const inputNombres = document.createElement('input');
+        inputNombres.placeholder = "Persona " + index;
+        inputNombres.className = "inputNombres";
         
 
         // containerPersonas.appendChild(tagh4)
@@ -45,14 +45,14 @@ function cantidadParticipantes (e) {
         inputMonto.type = "number"
         inputMonto.className = "inputMonto";
         inputMonto.min = 0
-        inputMonto.placeholder = "Monto pagado"
+        inputMonto.placeholder = "$0"
         
         // containerPersonas.appendChild(inputMonto)
         
         const containerPersonaGasto = document.createElement('div')
         containerPersonaGasto.className = "containerPersonaGasto"
 
-        containerPersonaGasto.appendChild(tagh4)
+        containerPersonaGasto.appendChild(inputNombres)
         containerPersonaGasto.appendChild(inputMonto)
 
         containerPersonas.appendChild(containerPersonaGasto)
@@ -80,11 +80,11 @@ function divisionCuentas () {
 
     for (let index = 0; index < cantidadPersonas.length; index++) {
 
-        if(tagh4[index].value == "") {
+        if(inputNombres[index].value == "") {
             cantidadPersonas[index.name = "Persona " + index]
         }else {
 
-        cantidadPersonas[index].name = tagh4[index].value
+        cantidadPersonas[index].name = inputNombres[index].value
         }
         
     }
@@ -119,7 +119,7 @@ function divisionCuentas () {
 
 
         const total = document.createElement('h4');
-                total.innerText = "El gasto fue de $" + totalMontos
+                total.innerText = "El gasto total fue de $" + totalMontos
                 total.className = "total";
 
                 resultados.appendChild(total)

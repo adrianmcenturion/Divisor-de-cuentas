@@ -3,8 +3,9 @@ html {
 }
 
 :root {
-    --color-background: #A6A9BC;
-    --color-primario: #5C677D;
+    --color-background: #f7fbff;
+    --color-primario: #696771;
+    --color-fonts-secundarias: #a8a7aa;
     --color-secundario: #001233;
 
 }
@@ -13,6 +14,25 @@ html {
     margin: 0%;
     padding: 0%;
     
+}
+
+.botones_general {
+    padding: 20px 60px;
+    border-radius: 15px;
+    font-size: 1em;
+    color: var(--color-primario);
+}
+
+.fonts-secundarias {
+    color: var(--color-fonts-secundarias);
+}
+
+.flex_column_center {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 body {
@@ -34,32 +54,32 @@ body {
 }
 .card-divisor {
     background-color: var(--color-background);
-    width: 45%;
+    width: 47%;
     height: 100%;
-    max-width: 50vw ;
     min-width: 375px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
 }
 
 .container-estilo {
+    background-color: transparent;
     border-radius: 15px;
-    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
--webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 18px -4px rgba(166,166,166,0.5);
+-webkit-box-shadow: 0px 0px 18px -4px rgba(166,166,166,0.5);
+-moz-box-shadow: 0px 0px 18px -4px rgba(166,166,166,0.5);
     
 }
 
-.card-divisor h1 {
-    margin-top: 3rem;
-    font-size: 3em;
+.h1 {
+    margin-top: 2rem;
+    font-size: 1.5em;
+    color: var(--color-primario);
 }
 
 .contenedor-inputs {
-    margin-top: 3rem;
-    width: 80%;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,10 +87,32 @@ body {
 
 }
 
+.label_participantes {
+
+}
+
+.input_participantes {
+    width: 60px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    color: var(--color-fonts-secundarias);
+    text-align: center;
+    border-style: none;
+    background: transparent;
+    font-size: 0.9em;
+    box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 71%);
+    -webkit-box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 20%);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(166,166,166,0.71);
+}
+
 .boton_siguiente {
-    padding: 5px;
-    margin: 5rem 0; 
-    
+    margin-top: 2rem;
+}
+
+.p2 {
+    margin: 2rem;
+
 }
 
 .containerPersonas {
@@ -90,13 +132,35 @@ body {
 }
 
 
-.participantesH4 {
-    margin-right: 0.5em;
+.inputNombres {
+    margin: 5px;
+    font-size: 0.9em;
+    border-style: none;
+    background: transparent;
+    color: var(--color-fonts-secundarias);
+}
+
+.inputNombres::placeholder {
+    color: var(--color-fonts-secundarias);
+}
+
+.inputMonto::placeholder {
+    color: var(--color-fonts-secundarias);
 }
 
 .inputMonto {
-    margin: 0.5em;
-    width: 100px;
+    width: 80px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    border-style: none;
+    background: transparent;
+    font-size: 0.9em;
+    color: var(--color-fonts-secundarias);
+    box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 71%);
+    -webkit-box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 20%);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(166,166,166,0.71);
 }
 
 .h4resultado {
@@ -106,14 +170,13 @@ body {
 
 .calculoGastos {
     width: 100%;
-    margin-top: 4rem;
-
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .container-resultados {
-    width: 45%;
+    width: 47%;
     height: 100%;
     min-width: 375px;
     display: flex;
@@ -122,8 +185,6 @@ body {
 }
 
 .resultados {
-    background-color: red;
-    
     height: 15%;
     display: flex;
     flex-direction: column;
@@ -133,12 +194,8 @@ body {
 }
 
 .container-tiene-que-recibir {
-    background-color: green;
-    
     height: 35%;
 }
 .container-tiene-que-poner {
-    background-color: cornflowerblue;
-    
     height: 35%;
 }
