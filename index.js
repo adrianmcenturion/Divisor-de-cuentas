@@ -3,7 +3,7 @@ const monto = document.getElementById("monto")
 const boton_siguiente = document.getElementById("boton_siguiente")
 const boton_reset = document.getElementById("boton_reset")
 const containerPersonas = document.getElementById("containerPersonas")
-
+const tagh4 = document.getElementsByClassName("participantesH4")
 const inputMonto = document.getElementsByClassName("inputMonto")
 const botonCalcular = document.getElementById("botonCalcular")
 
@@ -34,9 +34,10 @@ function cantidadParticipantes (e) {
             
             name: "Persona " + index});
 
-        const tagh4 = document.createElement('h4');
-        tagh4.innerText = "Persona " + index;
+        const tagh4 = document.createElement('input');
+        tagh4.placeholder = "Persona " + index;
         tagh4.className = "participantesH4";
+        
 
         // containerPersonas.appendChild(tagh4)
 
@@ -56,22 +57,37 @@ function cantidadParticipantes (e) {
 
         containerPersonas.appendChild(containerPersonaGasto)
         
-        
     }
+
 
    console.log(cantidadPersonas)
 
+
+
    boton_siguiente.disabled = true
 
+   console.log(cantidadPersonas)
+
    
-}
+    }
+
+    
 
 }
-
-
 
 
 function divisionCuentas () {
+
+    for (let index = 0; index < cantidadPersonas.length; index++) {
+        cantidadPersonas[index].name = tagh4[index].value
+        
+    }
+
+    console.log(cantidadPersonas)
+
+
+
+
     for (let index = 0; index < inputMonto.length; index++) {
 
         
@@ -80,7 +96,6 @@ function divisionCuentas () {
     }
     
     
-
 
     const arrayMontos = cantidadPersonas.map(function(cantidadPersonas) {return cantidadPersonas.monto})
     const arrayMontosNum = arrayMontos.map(i=>Number(i));
