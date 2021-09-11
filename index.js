@@ -13,6 +13,7 @@ const containerTieneQuePoner = document.getElementById("container-tiene-que-pone
 
 const containerResultados = document.getElementById("container-resultados")
 const cardDivisor = document.getElementById('card-divisor')
+const containerGrande = document.getElementById('container-grande')
 
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
@@ -104,6 +105,7 @@ function divisionCuentas () {
     botonCalcular.classList.toggle("activado");
     containerResultados.classList.toggle('activado')
     cardDivisor.classList.toggle('activado')
+    containerGrande.classList.toggle('activado')
 
     for (let index = 0; index < cantidadPersonas.length; index++) {
 
