@@ -11,9 +11,32 @@ const resultados = document.getElementById("resultados")
 const containerTieneQueRecibir = document.getElementById("container-tiene-que-recibir")
 const containerTieneQuePoner = document.getElementById("container-tiene-que-poner")
 
+const containerResultados = document.getElementById("container-resultados")
+const cardDivisor = document.getElementById('card-divisor')
+
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
 boton_reset.addEventListener('click', resetearTodo )
+
+
+
+
+
+// const calcularToggle = document.getElementsByClassName(".toggle")
+
+// calcularToggle.addEventListener('onclick', function() {
+
+//     this.classList.toggle('active');
+//     containerResultados.toggle('active')
+
+
+// })
+
+    
+
+
+
+
 
 
 const cantidadPersonas = []
@@ -77,6 +100,10 @@ function cantidadParticipantes (e) {
 
 
 function divisionCuentas () {
+
+    botonCalcular.classList.toggle("activado");
+    containerResultados.classList.toggle('activado')
+    cardDivisor.classList.toggle('activado')
 
     for (let index = 0; index < cantidadPersonas.length; index++) {
 
@@ -179,6 +206,9 @@ function divisionCuentas () {
 
     
     botonCalcular.disabled = true
+    
+    
+
 
 }
 

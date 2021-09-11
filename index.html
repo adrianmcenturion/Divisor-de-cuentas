@@ -11,7 +11,7 @@
     <main class="container-principal">
 
     <div class="container-grande">
-        <div class="card-divisor container-estilo">
+        <div id="card-divisor" class="card-divisor container-estilo">
             <h1 class="h1">Divisor de gastos</h1>
             <form id="form" action="" class="contenedor-inputs">
                 <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
@@ -28,11 +28,11 @@
                 
             </div>
             <div id="calculoGastos" class="calculoGastos">
-                <button id="botonCalcular" class="botonCalcular botones_general" type="button">Calcular</button>
+                <button id="botonCalcular" class="botonCalcular botones_general toggle" type="button">Calcular</button>
             </div>
             
         </div>
-            <div class="container-resultados">
+            <div id="container-resultados" class="container-resultados">
                 <div id="resultados" class="resultados container-estilo flex_column_center"></div>
                 <div id="container-tiene-que-recibir" class="container-tiene-que-recibir container-estilo flex_column_center"></div>
                 <div id="container-tiene-que-poner" class="container-tiene-que-poner container-estilo flex_column_center"></div>
