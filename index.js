@@ -15,26 +15,15 @@ const containerResultados = document.getElementById("container-resultados")
 const cardDivisor = document.getElementById('card-divisor')
 const containerGrande = document.getElementById('container-grande')
 
+const botonMas = document.getElementById('botonMas')
+const botonMenos = document.getElementById('botonMenos')
+
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
 boton_reset.addEventListener('click', resetearTodo )
 
-
-
-
-
-// const calcularToggle = document.getElementsByClassName(".toggle")
-
-// calcularToggle.addEventListener('onclick', function() {
-
-//     this.classList.toggle('active');
-//     containerResultados.toggle('active')
-
-
-// })
-
-    
-
+botonMas.addEventListener('click', botonSumar)
+botonMenos.addEventListener('click', botonRestar)
 
 
 
@@ -42,11 +31,32 @@ boton_reset.addEventListener('click', resetearTodo )
 
 const cantidadPersonas = []
 
+function botonRestar () {
+
+    if( botonMenos.clicked = true && participantes.value > 1) {
+        participantes.value --
+    } 
+    
+    
+
+}
+function botonSumar () {
+
+    if(botonMas.clicked = true && participantes.value < 10) {
+        participantes.value ++
+    }
+    
+
+}
 
 function cantidadParticipantes (e) {
     e.preventDefault();
-
+    
     personas = participantes.value
+    
+    
+    
+        
 
     if (personas < 0 || personas > 10) {
 
@@ -89,6 +99,8 @@ function cantidadParticipantes (e) {
 
 
    boton_siguiente.disabled = true
+   botonMas.disabled = true
+   botonMenos.disabled = true
 
    console.log(cantidadPersonas)
 
@@ -177,25 +189,39 @@ function divisionCuentas () {
                 // const tieneQueRecibir = cantidadPersonas[index].name + " tiene que recibir " + diferencia[index].toFixed(2) * -1
 
     
-
+                const div = document.createElement('div')
+                const spanNombre = document.createElement('span')
                 const tagTieneQueRecibir = document.createElement('h4');
-                tagTieneQueRecibir.innerText = cantidadPersonas[index].name + " tiene que recibir $" + diferencia[index].toFixed(2) * -1;
+                const precio = document.createElement('b')
+                spanNombre.innerText = cantidadPersonas[index].name
+                tagTieneQueRecibir.innerText = " tiene que recibir "
                 tagTieneQueRecibir.className = "tieneQueRecibir";
+                precio.innerText =  "$" + diferencia[index].toFixed(2) * -1
 
-                containerTieneQueRecibir.appendChild(tagTieneQueRecibir)
 
+                div.appendChild(spanNombre)
+                div.appendChild(tagTieneQueRecibir)
+                div.appendChild(precio)
+                containerTieneQueRecibir.appendChild(div)
 
 
 
             } else {
 
                 // const tieneQuePoner = cantidadPersonas[index].name + " tiene que poner " + diferencia[index]
-
+                const div = document.createElement('div')
+                const spanNombre = document.createElement('span')
+                const precio = document.createElement('b')
                 const tagTieneQuePoner = document.createElement('h4');
-                tagTieneQuePoner.innerText = cantidadPersonas[index].name + " tiene que abonar $" + diferencia[index].toFixed(2)
+                tagTieneQuePoner.innerText = " tiene que abonar "
                 tagTieneQuePoner.className = "tieneQuePoner";
+                spanNombre.innerText = cantidadPersonas[index].name
+                precio.innerText =  "$" + diferencia[index].toFixed(2)
 
-                containerTieneQuePoner.appendChild(tagTieneQuePoner)
+                div.appendChild(spanNombre)
+                div.appendChild(tagTieneQuePoner)
+                div.appendChild(precio)
+                containerTieneQuePoner.appendChild(div)
 
             }
             
@@ -219,6 +245,8 @@ function divisionCuentas () {
 function resetearTodo (){
 
     window.location.reload();
+    
+
 
 }
 

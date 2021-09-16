@@ -15,7 +15,12 @@
             <h1 class="h1">Divisor de gastos</h1>
             <form id="form" action="" class="contenedor-inputs">
                 <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
-                <div class="mini_container"><label for="participantes" class="label_participantes fonts-secundarias">Cantidad de personas </label><input id="participantes" class="input_participantes" type="number" min="1" max="10" value="1"></div>
+                <div class="mini_container">
+                    <label for="participantes" class="label_participantes fonts-secundarias">Cantidad de personas </label>
+                    <button id="botonMenos" class="botonMenos" type="button"></button>
+                    <input id="participantes" class="input_participantes" type="number" min="1" max="10" value="1">
+                    <button id="botonMas" class="botonMas" type="button"></button>
+                </div>
                 <div class="container-botones">
                 <button type="button" id="boton_siguiente" class="boton_siguiente botones_general">Siguiente</button>
                 
