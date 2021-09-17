@@ -120,6 +120,9 @@ function divisionCuentas () {
     containerResultados.classList.toggle('activado')
     cardDivisor.classList.toggle('activado')
     containerGrande.classList.toggle('activado')
+    resultados.classList.toggle('activado')
+    containerTieneQuePoner.classList.toggle('activado')
+    containerTieneQueRecibir.classList.toggle('activado')
 
     for (let index = 0; index < cantidadPersonas.length; index++) {
 

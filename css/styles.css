@@ -297,9 +297,12 @@ input::-webkit-inner-spin-button {
 }
 
 .container-resultados.activado {
-    visibility: visible;
+    visibility: hidden;
+    
     position: unset;
-}
+    animation: slide 1s;
+    transition: 1s;
+} 
 
 
 
@@ -308,8 +311,63 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    /* position: absolute;
+    left: 0%; */
     
+}
+
+.container-tiene-que-recibir-poner {
+    position: relative;
+    left: 0%;
+}
+
+ .resultados.activado {
+    width: 564px;
+    animation: slide 1s alternate;
+    /* transition: 1s; */
+    visibility: visible;
+}
+
+.contenedor-recibir.activado {
+    width: 564px;
+    animation: slide 1.5s alternate;
+    /* transition: 1s; */
+    visibility: visible;
+
+} 
+
+.contenedor-poner.activado {
+    width: 564px;
+    animation: slide 2s alternate;
+    /* transition: 1s; */
+    visibility: visible;
+}
+
+@keyframes slide {
+
+    0% {
+        transform: translateX(-588px);
+        opacity: 0%;
+    }
+
+    75% {
+        opacity: 0%;
+        transform: translateX(-588px);
+    }
+
+    90% {
+        visibility: visible;
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+    
+    100% {
+        visibility: visible;
+        opacity: 100%;
+        transform: translateX(0px);
+
+    }
+
 }
 
 .mini-containers-div-resultados {
@@ -414,6 +472,11 @@ input::-webkit-inner-spin-button {
         font-size: 20px;
         width: 150px;
     }
+
+    .resultados.activado, .contenedor-recibir.activado, .contenedor-poner.activado {
+        width: 364px;
+    }
+
 
 
 
