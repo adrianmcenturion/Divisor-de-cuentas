@@ -17,10 +17,12 @@ const containerGrande = document.getElementById('container-grande')
 
 const botonMas = document.getElementById('botonMas')
 const botonMenos = document.getElementById('botonMenos')
+const botonResetMobile = document.getElementById('boton_reset_mobile')
 
 boton_siguiente.addEventListener('click', cantidadParticipantes)
 botonCalcular.addEventListener('click', divisionCuentas)
 boton_reset.addEventListener('click', resetearTodo )
+botonResetMobile.addEventListener('click', resetearTodo )
 
 botonMas.addEventListener('click', botonSumar)
 botonMenos.addEventListener('click', botonRestar)
@@ -158,12 +160,19 @@ function divisionCuentas () {
 
         console.log(totalMontos)
 
-
+        const div = document.createElement('div')
         const total = document.createElement('h4');
-                total.innerText = "El gasto total fue de $" + totalMontos
+        const precio = document.createElement('b')
+                precio.innerText = "$" + totalMontos
+                total.innerText = "El gasto total fue de "
                 total.className = "total";
+                div.className = "mini-containers-div-resultados"
 
-                resultados.appendChild(total)
+
+                div.appendChild(total)
+                div.appendChild(precio)
+
+                resultados.appendChild(div)
 
     
         const cadaUnoPone = 0
@@ -197,6 +206,8 @@ function divisionCuentas () {
                 tagTieneQueRecibir.innerText = " tiene que recibir "
                 tagTieneQueRecibir.className = "tieneQueRecibir";
                 precio.innerText =  "$" + diferencia[index].toFixed(2) * -1
+                div.className = "mini-containers-div-resultados"
+                spanNombre.className = "span-recibir"
 
 
                 div.appendChild(spanNombre)
@@ -217,6 +228,8 @@ function divisionCuentas () {
                 tagTieneQuePoner.className = "tieneQuePoner";
                 spanNombre.innerText = cantidadPersonas[index].name
                 precio.innerText =  "$" + diferencia[index].toFixed(2)
+                div.className = "mini-containers-div-resultados"
+                spanNombre.className = "span-poner"
 
                 div.appendChild(spanNombre)
                 div.appendChild(tagTieneQuePoner)

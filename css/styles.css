@@ -7,20 +7,28 @@ html {
     --color-primario: #696771;
     --color-fonts-secundarias: #a8a7aa;
     --color-secundario: #001233;
+    --color-rojo: #E63946;
+    --color-verde: #7DD161;
+    --color-azul: #457B9D;
+    --color-celeste: #A8DADC;
+    --color-azul-oscuro: #3D70B8;
 
 }
 
 * {
     margin: 0%;
     padding: 0%;
+    font-family: 'Prompt', sans-serif;
     
 }
 
 .botones_general {
-    padding: 20px 60px;
+    width: 170px;
+    padding: 5px;
     border-radius: 15px;
-    font-size: 1em;
+    font-size: 24px;
     color: var(--color-primario);
+    margin: 0% auto;
 }
 
 .fonts-secundarias {
@@ -64,7 +72,7 @@ body {
     margin: 3rem 0;
     width: 564px;
     min-width: 375px;
-    height: 900px;
+    height: 700px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -94,7 +102,7 @@ body {
 .card-divisor {
     background-color: var(--color-background);
     width: 564px;
-    height: 900px;
+    height: 700px;
     min-width: 375px;
     display: flex;
     flex-direction: column;
@@ -118,13 +126,13 @@ body {
 }
 
 .h1 {
-    margin-top: 2rem;
-    font-size: 1.5em;
+    margin-top: 1rem;
+    font-size: 1.2em;
     color: var(--color-primario);
 }
 
 .contenedor-inputs {
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,13 +143,13 @@ body {
 .mini_container {
     display: flex;
     align-items: center;
+    font-size: 0.9em;
 }
 
 
 .input_participantes {
     width: 60px;
     height: 25px;
-    margin: 5px;
     border-radius: 5px;
     color: var(--color-fonts-secundarias);
     text-align: center;
@@ -163,18 +171,31 @@ input::-webkit-inner-spin-button {
 
 .botonMenos, .botonMas {
     margin: 0 10px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    background-color: cornflowerblue;
+    border-style: none;
+    font-size: 40px;
+    font-weight: 700;
+    background-color: transparent;
+    color: var(--color-azul);
+    text-align: center;
 }
 
+
 .boton_siguiente {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    background-color: var(--color-verde);
+}
+
+.boton_reset, .boton_reset_mobile {
+    background-color: var(--color-rojo);
+}
+
+.botonCalcular {
+    background-color: var(--color-azul);
 }
 
 .p2 {
-    margin: 2rem;
+    margin: 0.5rem;
+    font-size: 0.9em;
 
 }
 
@@ -185,6 +206,7 @@ input::-webkit-inner-spin-button {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0% auto;
+    font-size: 0.7em;
 }
 
 .containerPersonaGasto {
@@ -203,13 +225,13 @@ input::-webkit-inner-spin-button {
     color: var(--color-fonts-secundarias);
 }
 
-.inputNombres::placeholder {
+.inputNombres::placeholder, .inputMonto::placeholder {
     color: var(--color-fonts-secundarias);
 }
 
-.inputMonto::placeholder {
+/* .inputMonto::placeholder {
     color: var(--color-fonts-secundarias);
-}
+} */
 
 .inputMonto {
     width: 80px;
@@ -233,25 +255,14 @@ input::-webkit-inner-spin-button {
 
 .calculoGastos {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
 
-/* .container-resultados {
-    width: 47%;
-    height: 100%;
-    min-width: 375px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
-
-
 .container-resultados {
     width: 564px;
-    height: 900px;
+    height: 700px;
     min-width: 375px;
     position: absolute;
     display: flex;
@@ -260,6 +271,29 @@ input::-webkit-inner-spin-button {
     visibility: hidden;
     color: var(--color-fonts-secundarias);
     font-weight: 500;
+    font-size: 0.7em;
+}
+
+.container-resultados .boton_reset_mobile {
+    visibility: hidden;
+    position: absolute;
+}
+
+.container-resultados b {
+    margin-left: 10px;
+    color: var(--color-primario);
+}
+
+.span-poner, .span-recibir {
+    font-weight: 700;
+}
+
+.span-poner {
+    color: red;
+}
+
+.span-recibir {
+    color: green;
 }
 
 .container-resultados.activado {
@@ -270,7 +304,7 @@ input::-webkit-inner-spin-button {
 
 
 .resultados {
-    height: 15%;
+    height: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -278,32 +312,26 @@ input::-webkit-inner-spin-button {
     
 }
 
-.container-tiene-que-recibir {
-    height: 35%;
-}
-.container-tiene-que-poner {
-    height: 35%;
-}
-
-.container-tiene-que-poner div {
+.mini-containers-div-resultados {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-.container-tiene-que-poner span {
+
+
+.container-tiene-que-recibir-poner {
+    height: 43%;
+}
+
+.span-poner {
     margin-right: 10px;
     color: red;
 }
 
-.container-tiene-que-recibir span {
+.span-recibir {
     margin-right: 10px;
     color: green;
-}
-
-.container-tiene-que-recibir div {
-    display: flex;
-    justify-content: space-evenly;
-    ;
 }
 
 .container-tiene-que-recibir b {
@@ -319,41 +347,23 @@ input::-webkit-inner-spin-button {
 }
 
 
-@media screen and (max-width: 845px) and (min-width: 375px) {
+@media screen and (max-width: 1156px) and (min-width: 375px) {
 
     .p2 {
         padding: 0 0.5em;
+        font-size: 14px;
+        margin: 1em;
     }
 
     .inputNombres {
         width: 200px;
-        font-size: 0.7em;
     }
 
-    .inputMonto {
-        font-size: 0.7em;
+    .label_participantes, .input_participantes, .inputMonto, .inputNombres, .total, .tieneQuePoner, .tieneQueRecibir {
+
+        font-size: 14px;
     }
 
-    .input_participantes {
-        font-size: 0.7em;
-    }
-
-    .label_participantes {
-
-        font-size: 0.7em;
-    }
-
-    .total {
-        font-size: 0.7em;
-    }
-
-    .tieneQuePoner {
-        font-size: 0.7em;
-    }
-
-    .tieneQueRecibir {
-        font-size: 0.7em;
-    }
 
     .card-divisor {
         width: 75vw;
@@ -362,6 +372,11 @@ input::-webkit-inner-spin-button {
     .card-divisor.activado {
         visibility: hidden;
     }
+
+    .card-divisor.activado .boton_reset {
+        visibility: hidden;
+    }
+
 
     .container-resultados {
         width: 60vw;
@@ -374,6 +389,11 @@ input::-webkit-inner-spin-button {
         width: 60vw;
     }
 
+    .container-resultados.activado .boton_reset_mobile {
+        visibility: visible;
+        position: initial;
+    }
+
     .container-grande {
         width: 60vw;
     }
@@ -381,6 +401,21 @@ input::-webkit-inner-spin-button {
     .container-grande.activado {
         width: 60vw;
     }
+
+    .resultados {
+        height: 12%;
+    }
+
+    .container-tiene-que-recibir-poner {
+        height: 38%;
+    }
+
+    .botones_general {
+        font-size: 20px;
+        width: 150px;
+    }
+
+
 
 
 

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divisor de Gastos</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-desktop/otfs/Font Awesome 5 Free-Solid-900.otf">
+    
 </head>
 <body>
     <main class="container-principal">
@@ -17,12 +22,13 @@
                 <!-- <label for="monto">Monto </label><input id="monto" type="number"> -->
                 <div class="mini_container">
                     <label for="participantes" class="label_participantes fonts-secundarias">Cantidad de personas </label>
-                    <button id="botonMenos" class="botonMenos" type="button"></button>
+                    <button id="botonMenos" class="botonMenos" type="button">-</button>
                     <input id="participantes" class="input_participantes" type="number" min="1" max="10" value="1">
-                    <button id="botonMas" class="botonMas" type="button"></button>
+                    <button id="botonMas" class="botonMas" type="button">+</button>
                 </div>
                 <div class="container-botones">
                 <button type="button" id="boton_siguiente" class="boton_siguiente botones_general">Siguiente</button>
+                <button type="reset" id="boton_reset" class="boton_reset botones_general">Reiniciar</button>
                 
 
                 </div>
@@ -39,9 +45,9 @@
         </div>
             <div id="container-resultados" class="container-resultados">
                 <div id="resultados" class="resultados container-estilo flex_column_center"></div>
-                <div id="container-tiene-que-recibir" class="container-tiene-que-recibir container-estilo flex_column_center"></div>
-                <div id="container-tiene-que-poner" class="container-tiene-que-poner container-estilo flex_column_center"></div>
-                <button type="reset" id="boton_reset" class="boton_reset botones_general">Reiniciar</button>
+                <div id="container-tiene-que-recibir" class="container-tiene-que-recibir-poner container-estilo flex_column_center"></div>
+                <div id="container-tiene-que-poner" class="container-tiene-que-recibir-poner container-estilo flex_column_center"></div>
+                <button type="reset" id="boton_reset_mobile" class="boton_reset_mobile botones_general">Reiniciar</button>
             </div>
     </div>
 </main>
@@ -52,5 +58,7 @@
 
 
     <script src="./index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
