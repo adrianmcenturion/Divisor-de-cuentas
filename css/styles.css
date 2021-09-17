@@ -355,7 +355,7 @@ input::-webkit-inner-spin-button {
         transform: translateX(-588px);
     }
 
-    90% {
+    97% {
         visibility: visible;
         opacity: 100%;
         transform: translateX(0px);
@@ -453,6 +453,7 @@ input::-webkit-inner-spin-button {
     }
 
     .container-grande {
+        margin: 0%;
         width: 60vw;
     }
 
