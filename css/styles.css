@@ -8,10 +8,11 @@ html {
     --color-fonts-secundarias: #a8a7aa;
     --color-secundario: #001233;
     --color-rojo: #E63946;
-    --color-verde: #7DD161;
+    --color-verde: #59BE37;
     --color-azul: #457B9D;
     --color-celeste: #A8DADC;
     --color-azul-oscuro: #3D70B8;
+    --color-fondo-inputs: #f1f4f8;
 
 }
 
@@ -26,9 +27,13 @@ html {
     width: 170px;
     padding: 5px;
     border-radius: 15px;
+    border-style: none;
     font-size: 24px;
     color: var(--color-background);
     margin: 0% auto;
+    box-shadow: 0px 0px 18px -4px rgb(166 166 166 / 50%);
+    -webkit-box-shadow: 0px 3px 8px 1px rgb(166 166 166);
+    -moz-box-shadow: 0px 0px 18px -4px rgba(166,166,166,0.5);
 }
 
 .botones_general:hover {
@@ -127,6 +132,7 @@ background-image: repeating-linear-gradient(
     margin-top: 1rem;
     font-size: 1.2em;
     color: var(--color-primario);
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 21%);
 }
 
 .contenedor-inputs {
@@ -154,9 +160,9 @@ background-image: repeating-linear-gradient(
     border-style: none;
     background: transparent;
     font-size: 0.9em;
-    box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 71%);
-    -webkit-box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 20%);
-    -moz-box-shadow: 0px 0px 11px 1px rgba(166,166,166,0.71);
+    box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -webkit-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -moz-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
 }
 
 
@@ -229,9 +235,9 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
     background: transparent;
     color: var(--color-fonts-secundarias);
-    box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 71%);
-    -webkit-box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 20%);
-    -moz-box-shadow: 0px 0px 11px 1px rgba(166,166,166,0.71);
+    box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -webkit-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -moz-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
 }
 
 .inputNombres::placeholder, .inputMonto::placeholder {
@@ -248,19 +254,19 @@ input::-webkit-inner-spin-button {
     background: transparent;
     font-size: 0.9em;
     color: var(--color-fonts-secundarias);
-    box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 71%);
-    -webkit-box-shadow: 0px 0px 11px 1px rgb(166 166 166 / 20%);
-    -moz-box-shadow: 0px 0px 11px 1px rgba(166,166,166,0.71);
+    box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -webkit-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
+    -moz-box-shadow: 0px 2px 5px 2px rgb(166 166 166 / 30%);
 }
 
 .inputMonto::before {
     content: '$';
 }
 
-.h4resultado {
+/* .h4resultado {
     font-size: 2em;
     color: red;
-}
+} */
 
 .calculoGastos {
     width: 100%;
@@ -295,14 +301,15 @@ input::-webkit-inner-spin-button {
 
 .span-poner, .span-recibir {
     font-weight: 700;
+    margin-right: 10px;
 }
 
 .span-poner {
-    color: red;
+    color: var(--color-rojo);
 }
 
 .span-recibir {
-    color: green;
+    color: var(--color-verde);
 }
 
 .container-resultados.activado {
@@ -389,16 +396,6 @@ input::-webkit-inner-spin-button {
 
 .container-tiene-que-recibir-poner {
     height: 43%;
-}
-
-.span-poner {
-    margin-right: 10px;
-    color: red;
-}
-
-.span-recibir {
-    margin-right: 10px;
-    color: green;
 }
 
 .container-tiene-que-recibir b {
