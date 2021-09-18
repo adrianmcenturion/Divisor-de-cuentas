@@ -31,6 +31,27 @@ html {
     margin: 0% auto;
 }
 
+.botones_general:hover {
+    animation: botones 1s;
+    transition: 1s;
+}
+
+@keyframes botones {
+
+    0% {
+        transform: scale(0.9);
+    }
+    
+    50% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(0.9);
+    }
+    
+}
+
 .fonts-secundarias {
     color: var(--color-fonts-secundarias);
 }
@@ -391,6 +412,7 @@ input::-webkit-inner-spin-button {
 
     .card-divisor {
         width: 75vw;
+        height: 650px;
     }
 
     .card-divisor.activado {
@@ -404,6 +426,7 @@ input::-webkit-inner-spin-button {
 
     .container-resultados {
         width: 60vw;
+        height: 650px;
         
     }
 
@@ -421,6 +444,7 @@ input::-webkit-inner-spin-button {
     .container-grande {
         margin: 0%;
         width: 60vw;
+        height: 650px;
     }
 
     .container-grande.activado {
@@ -438,10 +462,16 @@ input::-webkit-inner-spin-button {
     .botones_general {
         font-size: 20px;
         width: 150px;
+        padding: 1px;
     }
 
     .resultados.activado, .contenedor-recibir.activado, .contenedor-poner.activado {
         width: 364px;
+    }
+
+    .botones_general:hover {
+    
+        transition: 0s;
     }
 
 
