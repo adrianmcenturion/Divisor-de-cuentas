@@ -548,6 +548,14 @@ footer ul li:hover {
         transition: 0s;
     }
 
+    footer {
+        height: 30px;
+    }
+
+    footer i {
+        font-size: 1em;
+    }
+
 
 
 
